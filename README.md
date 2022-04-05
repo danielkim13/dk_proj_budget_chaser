@@ -58,5 +58,5 @@ SO THAT my account balance is accurate when I am traveling
 
 ## Screen Capture
 
-![Screen Capture](TBD)
+![Screen Capture](./public/img/screenShot.png)
 
