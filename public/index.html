@@ -9,7 +9,7 @@
 
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css" />
     <link rel="stylesheet" href="css/styles.css" />
-
+    <link rel="manifest" href="./manifest.webmanifest">
     <title>Budget Tracker</title>
   </head>
   <body>
@@ -40,8 +40,20 @@
     </div>
 
     <script src="https://cdn.jsdelivr.net/npm/chart.js@2.8.0"></script>
-    <script src="js/index.js"></script>
     <!-- adding idb.js to index.html -->
     <script src="./js/idb.js"></script>
+    <script src="js/index.js"></script>
   </body>
+  <script>
+    (async function () {
+      try {
+        if ("serviceWorker" in navigator) {
+          await navigator.serviceWorker.register("./service-worker.js");
+          await console.log("Service Worker registered successfully!");
+        }
+      } catch (error) {
+        console.log("Service Worker registration failed!");
+      }
+    })();
+  </script>
 </html>
